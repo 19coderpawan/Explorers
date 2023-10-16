@@ -2,8 +2,8 @@ import React from 'react'
 
 const Work = () => {
   return (
-    <div>
-      Navbar
+    <div  className='work_Section'>
+    Work
     </div>
   )
 }
