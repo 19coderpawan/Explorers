@@ -1,0 +1,27 @@
+body{
+    overflow: auto;
+}
+.Container{
+    height: 100vh;
+    background-color: red;
+    /* overflow: hidden; */
+    margin: 0;
+    padding:0;
+}
+.hero_Section{
+    height: 100vh;
+  background-color: yellow;
+    
+}
+.work_Section{
+    height: 100vh;
+    background-color: aqua;
+}
+.who_Section{
+    height: 100vh;
+    background-color: black;
+}
+.contacts_Section{
+    height: 100vh;
+    background-color: blue;
+}
