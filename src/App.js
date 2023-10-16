@@ -1,10 +1,11 @@
-import Home from "./Components/Home";
+import Hero from "./Components/Hero";
+
 
 
 function App() {
   return(
     <>
-      <Home/>
+      <Hero/>
     </>
   
   )
