@@ -18,11 +18,62 @@ body {
     scroll-behavior: smooth;
 }
 
+/*****************************************/
 .hero_Section {
     height: 100vh;
     color: white;
     /* background-color: yellow; */
     scroll-snap-align: start;
+}
+.main_navcontainer{
+   display: flex;
+   justify-content: center; 
+}
+.nav_container{
+    width: 1700px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:19px 0px;
+}
+.logo_list{
+    display: flex;   
+    gap:10px;
+    background-color: transparent;
+}
+.lists{
+    display: flex;
+    gap: 130px;
+    list-style: none;
+    align-items: center;
+    font-weight: bolder;
+    font-size:19px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+.img_logo{
+    height: 80px;
+    border-radius: 50px;
+}
+
+.nav_icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:33px;
+}
+i{
+    font-size:29px;
+}
+.search_btn{
+    border-radius: 39px;
+    border:2px solid rgb(26, 92, 184);
+    cursor: pointer;
+    background:linear-gradient(rgb(130, 23, 175),rgb(6, 43, 83));
+    width:80px;
+    height:49px;
+    color:white;
 }
 
 .work_Section {
