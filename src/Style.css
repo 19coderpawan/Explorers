@@ -1,27 +1,47 @@
-body{
-    overflow: auto;
-}
-.Container{
-    height: 100vh;
-    background-color: red;
-    /* overflow: hidden; */
+body {
+    overflow-y: auto;
     margin: 0;
-    padding:0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../public/img/universe.jpg");
 }
-.hero_Section{
-    height: 100vh;
-  background-color: yellow;
-    
+
+.Container {
+    height:100vh;
+    overflow: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
-.work_Section{
+
+.hero_Section {
     height: 100vh;
-    background-color: aqua;
+    color: white;
+    /* background-color: yellow; */
+    scroll-snap-align: start;
 }
-.who_Section{
+
+.work_Section {
     height: 100vh;
-    background-color: black;
+    color: white;
+    /* background-color: aqua; */
+    scroll-snap-align: start;
 }
-.contacts_Section{
+
+.who_Section {
     height: 100vh;
-    background-color: blue;
+    color: white;
+    /* background-color: black; */
+    scroll-snap-align: start;
+}
+
+.contacts_Section {
+    height: 100vh;
+    color: white;
+    /* background-color: blue; */
+    scroll-snap-align: start;
 }
