@@ -23,7 +23,11 @@ body {
     height: 100vh;
     color: white;
     /* background-color: yellow; */
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 .main_navcontainer{
    display: flex;
@@ -71,10 +75,81 @@ i{
     border:2px solid rgb(26, 92, 184);
     cursor: pointer;
     background:linear-gradient(rgb(130, 23, 175),rgb(6, 43, 83));
-    width:80px;
+    width:100px;
     height:49px;
     color:white;
+    padding:20px;
 }
+
+.hero_Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:60px;
+    /* position: relative; */
+    /* padding:100px; */
+    /* gap:120px; */
+}
+.left{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* gap:5px;    */
+}
+h1{
+    font-size: 69px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.what_we_do{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+.subtitle{
+    /* font-size: 23px; */
+    color:white;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.line{
+    height: 5px;
+}
+.info{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.left button{
+    border:none;
+    background-color: rgb(202, 14, 183);
+    border-radius: 5px;
+    width: 100px;
+    padding:10px;
+    color:white;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.right{
+    flex:3;
+}
+.right img{
+    object-fit: contain;
+    /* position: absolute; */
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    animation: animate 2s infinite ease alternate;
+}
+@keyframes animate{
+    100%{
+        transform:translateY(29px);
+        /* transform: translateX(20px); */
+    }
+}
+
 
 .work_Section {
     height: 100vh;
