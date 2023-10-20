@@ -18,7 +18,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/*****************************************/
+/*****************************************Start here hero section************************************************/
 .hero_Section {
     height: 100vh;
     color: white;
@@ -85,7 +85,7 @@ i{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:60px;
+    gap:80px;
     /* position: relative; */
     /* padding:100px; */
     /* gap:120px; */
@@ -149,20 +149,112 @@ h1{
         /* transform: translateX(20px); */
     }
 }
-
+/**************************************************************end here hero section******************************/
 
 .work_Section {
     height: 100vh;
     color: white;
     /* background-color: aqua; */
     scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
 }
-
+.work_container{
+    width:1400px;
+    display: flex;
+    justify-content: space-between;
+}
+.Work_left{
+    flex:1;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.datalist{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.datalist li{
+    font-size:100px;
+    font-weight: bold;
+    color:transparent;
+    -webkit-text-stroke: 1px white ;
+    cursor:pointer;
+    position: relative;
+}
+.datalist li::after{
+    content:"Web design";
+    position:absolute;
+    top:0;
+    left: 0;
+    color:red;
+   
+}
+.Work_right{
+    flex:1;
+}
+/*****************************Who section start here*******************************************************/
 .who_Section {
     height: 100vh;
     color: white;
     /* background-color: black; */
     scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+   
+}
+.Who_Container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.right_who{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* gap:5px;    */
+}
+h1{
+    font-size: 69px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.what_we_do{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+.subtitle{
+    /* font-size: 23px; */
+    color:white;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.line{
+    height: 5px;
+}
+.info{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.right_who button{
+    border:none;
+    background-color: rgb(202, 14, 183);
+    border-radius: 5px;
+    height:50px;
+    width: 130px;
+    padding:10px;
+    color:white;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+.left_who{
+    flex:1;
 }
 
 .contacts_Section {
