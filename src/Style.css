@@ -149,52 +149,7 @@ h1{
         /* transform: translateX(20px); */
     }
 }
-/**************************************************************end here hero section******************************/
 
-.work_Section {
-    height: 100vh;
-    color: white;
-    /* background-color: aqua; */
-    scroll-snap-align: start;
-    display: flex;
-    justify-content: center;
-}
-.work_container{
-    width:1400px;
-    display: flex;
-    justify-content: space-between;
-}
-.Work_left{
-    flex:1;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-}
-.datalist{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap:20px;
-}
-.datalist li{
-    font-size:100px;
-    font-weight: bold;
-    color:transparent;
-    -webkit-text-stroke: 1px white ;
-    cursor:pointer;
-    position: relative;
-}
-.datalist li::after{
-    content:"Web design";
-    position:absolute;
-    top:0;
-    left: 0;
-    color:red;
-   
-}
-.Work_right{
-    flex:1;
-}
 /*****************************Who section start here*******************************************************/
 .who_Section {
     height: 100vh;
