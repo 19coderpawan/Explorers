@@ -212,9 +212,3 @@ h1{
     flex:1;
 }
 
-.contacts_Section {
-    height: 100vh;
-    color: white;
-    /* background-color: blue; */
-    scroll-snap-align: start;
-}
