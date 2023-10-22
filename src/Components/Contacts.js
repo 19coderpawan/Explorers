@@ -1,22 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
+import MapChart from './Map';
 
 const ContactsSection=styled.div`
     height: 100vh;
     color: white;
     scroll-snap-align: start;
+    /* background-image: url('./stars.webp'); */
 `;
 const Contactcontainer=styled.div`
   width: 100%;
   height:100%;
   display: flex;
   justify-content: space-between;
-  gap:50px;
+  gap:10px;
 `;
 const Contactleft=styled.div`
   flex:1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -28,9 +30,35 @@ const Form=styled.form`
    gap:20px;
 `;
 const Contacttitle=styled.h1`
-  font-weight: 200;
+  font-weight: bold;
+  font-size:70px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:transparent;
+  -webkit-text-stroke: 1px white;
+  /* background-image: url("./universe.jpg"); */
+  /* overflow: hidden;
+  white-space: nowrap; 
+  background-image: url("./img/dragon.jpg"); 
+  background-repeat: repeat; 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;  */
+  align-self: center;
 `;
+const Para=styled.p`
+  font-weight: bold;
+  font-size:30px;
+  text-transform: uppercase;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color:transparent;
+  /* background-image: url("./universe.jpg"); */
+  overflow: hidden;
+  white-space: nowrap; 
+  background-image: url("./img/dragon.jpg"); 
+  background-repeat: repeat; 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  text-align: center;
+`
 const Input=styled.input`
     padding: 25px;
     border:2px solid white;
@@ -79,11 +107,14 @@ const Contactright=styled.div`
 
 const Contacts = () => {
   return (
-   <ContactsSection>
+   <ContactsSection className='contact_section'>
     <Contactcontainer>
     <Contactleft>
        <Form>
-       <Contacttitle>Contact Us</Contacttitle>
+       <Contacttitle>Contact Us
+       <Para>From any where</Para>
+       </Contacttitle>
+       
         <Input placeholder='name'></Input>
         <Input placeholder='email'></Input>
         <TextArea placeholder='Write your message' rows={10}></TextArea>
@@ -91,7 +122,7 @@ const Contacts = () => {
        </Form>
     </Contactleft>
     <Contactright>
-
+      <MapChart/>
     </Contactright>
     </Contactcontainer>
    </ContactsSection>
