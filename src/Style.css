@@ -4,7 +4,7 @@ body {
     padding: 0;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("../public/img/universe.jpg");
+    /* background-image: url("../public/img/universe.jpg"); */
 }
 
 .Container {
@@ -28,6 +28,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-image: url("../public/img/constellation.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .main_navcontainer{
    display: flex;
@@ -155,6 +158,9 @@ h1{
     height: 100vh;
     color: white;
     /* background-color: black; */
+    background-image: url("../public/img/constellation.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     scroll-snap-align: start;
     display: flex;
     justify-content: center;
@@ -211,4 +217,17 @@ h1{
 .left_who{
     flex:1;
 }
+
+.work_section{
+    background-image: url("../public/img/constellation.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contact_section{
+    background-image: url("../public/img/constellation.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 
