@@ -15,7 +15,7 @@ const Navbar = () => {
                     </div>
                     <div className="nav_icons">
                         <i class="fa-brands fa-searchengin" ></i>
-                        <button className='search_btn'>Hire Me</button>
+                        <button className='search_btn'>Explore</button>
                     </div>
                 </div>
             </div>
