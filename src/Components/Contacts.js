@@ -1,6 +1,7 @@
-import React from 'react'
+import React ,{useRef, useState} from  'react'
 import styled from 'styled-components'
 import MapChart from './Map';
+import emailjs from '@emailjs/browser';
 
 const ContactsSection=styled.div`
     height: 100vh;
@@ -105,20 +106,37 @@ const Contactright=styled.div`
   flex:1;
 `;
 
+
+
 const Contacts = () => {
+  const form = useRef();
+  const [error,seterror]=useState(false);
+const handleSubmit=(e)=>{
+  e.preventDefault();
+  
+  emailjs.sendForm('gmailpawan', 'template_xd1vzt9', form.current, 'VYOW4SDB1X8S_fdAV')
+      .then((result) => {
+          console.log(result.text);
+          seterror(true);
+      }, (error) => {
+          console.log(error.text);
+      });
+}
+ 
   return (
    <ContactsSection className='contact_section'>
     <Contactcontainer>
     <Contactleft>
-       <Form>
+       <Form ref={form} onSubmit={handleSubmit}>
        <Contacttitle>Contact Us
        <Para>From any where</Para>
        </Contacttitle>
        
-        <Input placeholder='name'></Input>
-        <Input placeholder='email'></Input>
-        <TextArea placeholder='Write your message' rows={10}></TextArea>
-        <Button>Send</Button>
+        <Input placeholder='name' name='name'></Input>
+        <Input placeholder='email' name='email'></Input>
+        <TextArea placeholder='Write your message' name='message' rows={10}></TextArea>
+        <Button type='submit' value="Send">Send</Button>
+        {error && <p>`Your response is submitted thank you for your valueable time.`</p>}
        </Form>
     </Contactleft>
     <Contactright>
