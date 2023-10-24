@@ -110,6 +110,7 @@ const Contactright=styled.div`
 
 const Contacts = () => {
   const form = useRef();
+  const [values,setvalues]=useState({name:"",email:"",message:""});
   const [error,seterror]=useState(false);
 const handleSubmit=(e)=>{
   e.preventDefault();
@@ -118,6 +119,7 @@ const handleSubmit=(e)=>{
       .then((result) => {
           console.log(result.text);
           seterror(true);
+          setvalues({name:"",email:"",message:""});
       }, (error) => {
           console.log(error.text);
       });
@@ -132,9 +134,10 @@ const handleSubmit=(e)=>{
        <Para>From any where</Para>
        </Contacttitle>
        
-        <Input placeholder='name' name='name'></Input>
-        <Input placeholder='email' name='email'></Input>
-        <TextArea placeholder='Write your message' name='message' rows={10}></TextArea>
+        <Input placeholder='name' value={values.name} name='name' onChange={(e)=>{setvalues(e.target.value)}}></Input>
+        <Input placeholder='email' name='email'  value={values.email} onChange={(e)=>{setvalues(e.target.value)}}></Input>
+        <TextArea placeholder='Write your message' name='message'  value={values.message} onChange={(e)=>{setvalues(e.target.value)}}
+         rows={10}></TextArea>
         <Button type='submit' value="Send">Send</Button>
         {error && <p>`Your response is submitted thank you for your valueable time.`</p>}
        </Form>
