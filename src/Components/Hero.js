@@ -1,5 +1,8 @@
 import React from 'react'
 import Navbar from './Navbar'
+import {Canvas} from '@react-three/fiber'
+import { MeshDistortMaterial, OrbitControls, Sphere} from '@react-three/drei'
+import { Material } from 'three'
 
 const Hero = () => {
   return (
@@ -17,6 +20,18 @@ const Hero = () => {
            <button>Learn More</button>
         </div>
         <div className="right">
+          <Canvas camera={{fov:25, position:[6,6,6]}}>
+            <OrbitControls autoRotate />
+            <ambientLight intensity={4}/>
+            <directionalLight position={[3,2,1]}/>
+            <Sphere args={[1,100,200]} scale={1.6}>
+              {/* now to apply distroction in the sphere me have to use this component. */}
+              <MeshDistortMaterial color={'#220736'}
+              attach="material"
+              distort={0.5}
+              speed={2}/>
+            </Sphere>
+          </Canvas>
           <img src="./img/moon.png" alt="" />
         </div>
        </div>
