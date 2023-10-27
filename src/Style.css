@@ -86,9 +86,11 @@ i{
 
 .hero_Container{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:80px;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* gap:80px; */
+    height: 100vh;
+    width: 1400px;
     /* position: relative; */
     /* padding:100px; */
     /* gap:120px; */
@@ -132,13 +134,15 @@ h1{
     color:white;
     font-weight: bolder;
     cursor: pointer;
+    
 }
 .right{
     flex:3;
+    position: relative;
 }
 .right img{
     object-fit: contain;
-    /* position: absolute; */
+    position: absolute;
     top:0;
     bottom: 0;
     right: 0;
@@ -161,7 +165,7 @@ h1{
     background-image: url("../public/img/constellation.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     display: flex;
     justify-content: center;
    
@@ -169,7 +173,10 @@ h1{
 .Who_Container{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
+    width: 1400px;
+    scroll-snap-align: center;
+    height: 100vh;
    
 }
 .right_who{
@@ -228,11 +235,11 @@ h1{
     background-repeat: no-repeat;
     background-size: cover;
 }
-.testContainer{
+/* .testContainer{
     background-image: url("../public/img/constellation.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
 
 
 
