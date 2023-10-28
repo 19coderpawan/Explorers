@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import WebDesign from './WebDesign'
+import Development from './Development'
+import Product from './Product'
 
 const WorkSection = styled.div`
 height:100vh;
 scroll-snap-align:center;
 display:flex;
 justify-content:center;
+/* background-image: url("../public/img/universe.jpg"); */
+/* color:red; */
 `
 const WorkContainer = styled.div`
   width:1400px;
@@ -41,7 +46,7 @@ const Listitems = styled.li`
     /* color:whitesmoke; */
     overflow: hidden;
     white-space: nowrap; 
-    background-image: url("./img/galaticdragon.jpg"); 
+    background-image: url("./img/st.jpg"); 
     background-repeat: repeat; 
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent; 
@@ -71,23 +76,25 @@ const Work = () => {
     "ProductDesign",
     "Social Media"
   ]
+  const [work,setwork]=useState("Web Design");
   return (
-    <WorkSection>
+    <WorkSection className='work_section'>
       <WorkContainer>
         <WorkLeft>
           <Lists>
             {data.map((li) => (
-              <Listitems key={li} text={li}>
+              <Listitems key={li} text={li} onClick={()=>setwork(li)}>
                 {li}
               </Listitems>
             ))}
           </Lists>
         </WorkLeft>
-        <WorkRight></WorkRight>
+        <WorkRight>
+          {work==="Web Design" ? (<WebDesign/>): work==="Devlopment" ?(<Development/>):<Product/>}
+        </WorkRight>
       </WorkContainer>
     </WorkSection>
   )
 }
 
 export default Work
-
