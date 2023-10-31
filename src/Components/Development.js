@@ -17,11 +17,25 @@ const Container=styled.div`
   display:flex;
   justify-content:space-between;
 `
+const Desc=styled.p`
+width: 200px;
+height: 70px;
+background-color: white;
+color: black;
+/* position: absolute; */
+top:100px;
+left:100px;
+border-radius:10px;
+padding:10px;
+`
 
 const Development = () => {
   return (
     <Dev>
       <Container>
+        <Desc>
+          Iron man is one of the Strongest Characters in the MCU.
+        </Desc>
         <Canvas>
           <OrbitControls autoRotate/>
           <Stage environment="city" intensity={1}>
