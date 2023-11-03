@@ -16,6 +16,9 @@ body {
     }
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    @media only screen and (max-width:786px){
+        overflow-x: hidden;
+    }
 }
 
 /*****************************************Start here hero section************************************************/
@@ -33,6 +36,8 @@ body {
     background-size: cover;
     @media only screen and (max-width:786px){
         height: 200vh;
+        width: 100%;
+        overflow: hidden;
     }
     
 }
@@ -126,7 +131,9 @@ h1{
     font-size: 69px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     @media only screen and (max-width:786px) {
+        font-size:61px;
         text-align: center;
+        
     }
 }
 .what_we_do{
@@ -174,7 +181,9 @@ h1{
     position: relative;
     @media only screen and (max-width:786px) {
         flex:1;
-        width: 100%;
+        /* width: 100%; */
+        display: flex;
+        justify-content: flex-start;
     }
 }
 .right img{
@@ -188,10 +197,16 @@ h1{
     left: 0;
     margin: auto;
     animation: animate 2s infinite ease alternate;
-    @media only screen and(max-width:786px){
-        height:100px;
-        width: 100px;
-    }
+
+    
+}
+.right img{
+    @media only screen and (max-width: 786px){
+        width: 440px;
+        height: 440px;
+        /* position:static; */
+        margin:180px 10px 0 0 ;
+     }
 }
 @keyframes animate{
     100%{
