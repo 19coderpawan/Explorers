@@ -9,18 +9,31 @@ height:100vh;
 scroll-snap-align:center;
 display:flex;
 justify-content:center;
+@media only screen and (max-width:786px){
+  /* height: 200vh; */
+}
 /* background-image: url("../public/img/universe.jpg"); */
 /* color:red; */
 `
 const WorkContainer = styled.div`
-  width:1400px;
+  width:2300px;
+  height: auto;
   display:flex;
   justify-content:space-between;
+  @media only screen and (max-width:786px){
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    align-items: center;
+  }
 `
 const WorkLeft = styled.div`
-  flex:1;
+  flex:2;
   display:flex;
   align-items:center;
+  @media only screen and (max-width:786px){
+    flex:1;
+  }
 `
 const Lists = styled.ul`
 list-style: none;
@@ -62,24 +75,37 @@ const Listitems = styled.li`
       }
     }
   }
+  @media only screen and (max-width:786px){
+     font-size:30px;
+  }
 `;
 const WorkRight = styled.div`
   flex:1;
+  @media only screen and (max-width:786px){
+    /* height: 100%; */
+    /* width:100%; */
+    flex:3;
+    overflow-x: scroll;
+    margin-right: 150px;
+    margin-bottom: 10px;
+  }
 `
 
 
 const Work = () => {
   const data = [
-    "Web Design",
-    "Development",
-    "Illustration",
-    "ProductDesign",
-    "Social Media"
+    "Captain America",
+    "Iron Man",
+    "Thanos"
   ]
   const [work,setwork]=useState("Web Design");
   return (
+
     <WorkSection className='work_section'>
       <WorkContainer>
+      <WorkRight>
+          {work==="Captain America" ? (<WebDesign/>): work==="Iron Man" ?(<Development/>):<Product/>}
+        </WorkRight>
         <WorkLeft>
           <Lists>
             {data.map((li) => (
@@ -89,9 +115,7 @@ const Work = () => {
             ))}
           </Lists>
         </WorkLeft>
-        <WorkRight>
-          {work==="Web Design" ? (<WebDesign/>): work==="Devlopment" ?(<Development/>):<Product/>}
-        </WorkRight>
+        
       </WorkContainer>
     </WorkSection>
   )
