@@ -278,9 +278,15 @@ h1{
     font-weight: bolder;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     cursor: pointer;
+    @media only screen and (max-width:786px){
+        align-self: center;
+    }
 }
 .left_who{
     flex:1;
+    @media only screen and (max-width:786px){
+        display: none;
+    }
 }
 
 .work_section{
