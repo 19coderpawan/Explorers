@@ -1,36 +1,44 @@
-import React ,{useRef, useState} from  'react'
+import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
 import MapChart from './Map';
 import emailjs from '@emailjs/browser';
 
-const ContactsSection=styled.div`
+const ContactsSection = styled.div`
     height: 100vh;
     color: white;
     scroll-snap-align: start;
     /* background-image: url('./stars.webp'); */
+    @media only screen and (max-width:786px){
+      width:100%;
+
+    }
 `;
-const Contactcontainer=styled.div`
+const Contactcontainer = styled.div`
   width: 100%;
   height:100%;
   display: flex;
   justify-content: space-between;
   gap:10px;
 `;
-const Contactleft=styled.div`
+const Contactleft = styled.div`
   flex:1;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const Form=styled.form`
+const Form = styled.form`
    width:500px;
    display: flex;
    flex-direction: column;
    justify-content: center;
    gap:20px;
+   @media only screen and (max-width:786px){
+    width:100%;
+    align-items: center;
+   }
 `;
-const Contacttitle=styled.h1`
+const Contacttitle = styled.h1`
   font-weight: bold;
   font-size:70px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -44,8 +52,11 @@ const Contacttitle=styled.h1`
   -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent;  */
   align-self: center;
+  @media only screen and (max-width:786px){
+    font-size:30px;
+  }
 `;
-const Para=styled.p`
+const Para = styled.p`
   font-weight: bold;
   font-size:30px;
   text-transform: uppercase;
@@ -59,8 +70,11 @@ const Para=styled.p`
   -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent; 
   text-align: center;
+  @media only screen and (max-width:786px){
+    font-size:20px;
+  }
 `
-const Input=styled.input`
+const Input = styled.input`
     padding: 25px;
     border:2px solid white;
     border-radius:20px;
@@ -72,9 +86,10 @@ const Input=styled.input`
     &::placeholder{
     color:white;
    }
+   
 `;
 
-const TextArea=styled.textarea`
+const TextArea = styled.textarea`
   padding:25px;
   border:2px solid white;
   border-radius: 20px;
@@ -87,8 +102,11 @@ const TextArea=styled.textarea`
    &::placeholder{
     color:white;
    }
+   @media only screen and (max-width:786px){
+    width:320px;
+   }
 `;
-const Button=styled.button`
+const Button = styled.button`
   background-image: url("./img/st.jpg");
   border-radius: 10px;
   width:50%;
@@ -102,51 +120,53 @@ const Button=styled.button`
   text-transform:uppercase;
   
 `;
-const Contactright=styled.div`
+const Contactright = styled.div`
   flex:1;
+  @media only screen and (max-width:786px){
+    display: none;
+  }
 `;
 
 
 
 const Contacts = () => {
   const form = useRef();
-  const [values,setvalues]=useState({name:"",email:"",message:""});
-  const [error,seterror]=useState(false);
-const handleSubmit=(e)=>{
-  e.preventDefault();
-  
-  emailjs.sendForm('gmailpawan', 'template_xd1vzt9', form.current, 'VYOW4SDB1X8S_fdAV')
+  const [values, setvalues] = useState({ name: "", email: "", message: "" });
+  const [error, seterror] = useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('gmailpawan', 'template_xd1vzt9', form.current, 'VYOW4SDB1X8S_fdAV')
       .then((result) => {
-          console.log(result.text);
-          seterror(true);
-          setvalues({name:"",email:"",message:""});
+        console.log(result.text);
+        seterror(true);
+        setvalues({ name: "", email: "", message: "" });
       }, (error) => {
-          console.log(error.text);
+        console.log(error.text);
       });
-}
- 
+  }
+
   return (
-   <ContactsSection className='contact_section'>
-    <Contactcontainer>
-    <Contactleft>
-       <Form ref={form} onSubmit={handleSubmit}>
-       <Contacttitle>Contact Us
-       <Para>From any where</Para>
-       </Contacttitle>
-       
-        <Input placeholder='name' value={values.name} name='name' onChange={(e)=>{setvalues(e.target.value)}}></Input>
-        <Input placeholder='email' name='email'  value={values.email} onChange={(e)=>{setvalues(e.target.value)}}></Input>
-        <TextArea placeholder='Write your message' name='message'  value={values.message} onChange={(e)=>{setvalues(e.target.value)}}
-         rows={10}></TextArea>
-        <Button type='submit' value="Send">Send</Button>
-        {error && <p>`Your response is submitted thank you for your valueable time.`</p>}
-       </Form>
-    </Contactleft>
-    <Contactright>
-      <MapChart/>
-    </Contactright>
-    </Contactcontainer>
-   </ContactsSection>
+    <ContactsSection className='contact_section'>
+      <Contactcontainer>
+        <Contactleft>
+          <Form ref={form} onSubmit={handleSubmit}>
+            <Contacttitle>Contact Us
+              <Para>From any where</Para>
+            </Contacttitle>
+            <Input placeholder='name' value={values.name} name='name' onChange={(e) => { setvalues(e.target.value) }} required></Input>
+            <Input placeholder='email' name='email' value={values.email} onChange={(e) => { setvalues(e.target.value) }} required></Input>
+            <TextArea placeholder='Write your message' name='message' value={values.message} onChange={(e) => { setvalues(e.target.value) }}
+              rows={10} required></TextArea>
+            <Button type='submit' value="Send">Send</Button>
+            {error && <p>`Your response is submitted thank you for your valueable time.`</p>}
+          </Form>
+        </Contactleft>
+        <Contactright>
+          <MapChart />
+        </Contactright>
+      </Contactcontainer>
+    </ContactsSection>
   )
 }
 
