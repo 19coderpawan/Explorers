@@ -7,7 +7,7 @@ Source: https://sketchfab.com/3d-models/iron-man-old-suit-7b2022b26cfe49a8b0476f
 Title: Iron-Man old suit
 */
 
-import React, { useRef } from 'react'
+import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
