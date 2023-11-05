@@ -7,7 +7,7 @@ Source: https://sketchfab.com/3d-models/avengers-endgame-df0ab2d8550b430e96819e1
 Title: Avengers - Endgame
 */
 
-import React, { useRef } from 'react'
+import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
