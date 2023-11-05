@@ -2,9 +2,7 @@ import React from "react";
 import {
     ComposableMap,
     Geographies,
-    Geography,
-    Annotation,
-    ZoomableGroup
+    Geography
 } from "react-simple-maps";
 
 const MapChart = () => {
@@ -13,7 +11,7 @@ const MapChart = () => {
 
         <ComposableMap
             projection="geoAzimuthalEqualArea"
-            projectionConfig={{
+            projectionConfig={{  
                 rotate: [-10.0, -52.0, 0],
                 center: [-5, -3],
                 scale: 1600
