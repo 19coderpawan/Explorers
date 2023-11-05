@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import {Canvas} from '@react-three/fiber'
 import { MeshDistortMaterial, OrbitControls, Sphere} from '@react-three/drei'
-import { Material } from 'three'
+
 
 const Hero = () => {
   return (
@@ -24,11 +24,11 @@ const Hero = () => {
             <OrbitControls autoRotate />
             <ambientLight intensity={4}/>
             <directionalLight position={[3,2,1]}/>
-            <Sphere args={[1,100,200]} scale={1.6}>
+            <Sphere args={[1,100,200]} scale={1.3}>
               {/* now to apply distroction in the sphere me have to use this component. */}
               <MeshDistortMaterial color={'#220736'}
               attach="material"
-              distort={0.5}
+              distort={0.4}
               speed={2}/>
             </Sphere>
           </Canvas>
