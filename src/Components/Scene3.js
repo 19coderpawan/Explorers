@@ -7,7 +7,7 @@ Source: https://sketchfab.com/3d-models/thanos-7dca464eb47a4048bdba16a9f942cc48
 Title: Thanos
 */
 
-import React, { useRef } from 'react'
+import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
