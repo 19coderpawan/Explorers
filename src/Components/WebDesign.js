@@ -1,9 +1,10 @@
-import React, { Suspense } from 'react'
+// import React, { Suspense } from 'react'
+import React from 'react'
 
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { Model } from './Scene1'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, PerspectiveCamera, Stage } from '@react-three/drei'
+import { OrbitControls,  Stage } from '@react-three/drei'
 import styled from 'styled-components'
 
 const Web = styled.div`
