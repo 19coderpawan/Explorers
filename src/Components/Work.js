@@ -10,7 +10,7 @@ scroll-snap-align:center;
 display:flex;
 justify-content:center;
 @media only screen and (max-width:786px){
-  /* height: 200vh; */
+  height: 150vh;
 }
 /* background-image: url("../public/img/universe.jpg"); */
 /* color:red; */
@@ -32,7 +32,7 @@ const WorkLeft = styled.div`
   display:flex;
   align-items:center;
   @media only screen and (max-width:786px){
-    flex:1;
+    flex:3;
   }
 `
 const Lists = styled.ul`
@@ -82,12 +82,13 @@ const Listitems = styled.li`
 const WorkRight = styled.div`
   flex:1;
   @media only screen and (max-width:786px){
-    /* height: 100%; */
-    /* width:100%; */
+    height: 100%; 
+    width:100%;
     flex:3;
     overflow-x: scroll;
-    margin-right: 150px;
-    margin-bottom: 10px;
+    margin-right: 30px;
+    margin-bottom: -500px;
+    overflow-y:hidden;
   }
 `
 
