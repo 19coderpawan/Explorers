@@ -14,22 +14,42 @@ display:flex;
 justify-content:center;
 `
 const Container = styled.div`
- width:1400px;
+ width: 100%;
+  max-width: 1600px;
   height: 100vh;
-  display:flex;
-  justify-content:space-between;
-  position: relative;
+  display: flex;
+  flex-direction: column-reverse; /* Reverse the order for smaller screens */
+  justify-content: space-between;
+  @media only screen and (max-width: 786px) {
+    flex-direction: column; /* Change to column layout for smaller screens */
+    align-items: center;
+    justify-content: center;
+    /* max-width: 2000px; */
+    /* border:none; */
+  }
 `
 const Desc=styled.p`
-width: 200px;
-height: 70px;
-background-color: white;
-color: black;
-/* position: absolute; */
-top:100px;
-left:100px;
-border-radius:10px;
-padding:10px;
+ width: 100%;
+  max-width: 700px;
+  height: 90px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 30px; /* Add margin for better spacing */
+  overflow: hidden;
+  @media only screen and (max-width: 786px) {
+    padding:30px;
+    font-size:15px;
+    /* width:100%; */
+    height: 40px;
+    border-radius: 30%;
+    /* max-width: 900px; */
+    text-align: center;
+  }
+`
+const Canvascontainer= styled.div`
+ flex-grow: 1;
 `
 
 const WebDesign = () => {
@@ -37,6 +57,7 @@ const WebDesign = () => {
     <Web>
       <Container>
        <Desc>Captain America  is one of the strongest avengers.</Desc>
+       <Canvascontainer>
         <Canvas>
 
           {/* <ambientLight intensity={2}/>
@@ -45,13 +66,15 @@ const WebDesign = () => {
           <Stage environment="park" intensity={1} >
             <Model />
           </Stage>
-          <OrbitControls autoRotate scale={4} />
+          <OrbitControls autoRotate scale={1} />
 
 
         </Canvas>
+       </Canvascontainer>
       </Container>
     </Web>
   )
 }
 
 export default WebDesign
+
