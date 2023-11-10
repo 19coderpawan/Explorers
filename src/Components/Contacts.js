@@ -25,6 +25,9 @@ const Contactleft = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width:786px){
+    flex:4;
+  }
 `;
 
 const Form = styled.form`
@@ -35,7 +38,9 @@ const Form = styled.form`
    gap:20px;
    @media only screen and (max-width:786px){
     width:100%;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: flex-start;
+    gap:10px;
    }
 `;
 const Contacttitle = styled.h1`
@@ -54,6 +59,7 @@ const Contacttitle = styled.h1`
   align-self: center;
   @media only screen and (max-width:786px){
     font-size:30px;
+    margin-top:-300px;
   }
 `;
 const Para = styled.p`
@@ -103,7 +109,7 @@ const TextArea = styled.textarea`
     color:white;
    }
    @media only screen and (max-width:786px){
-    width:320px;
+    width:100%s;
    }
 `;
 const Button = styled.button`
@@ -157,7 +163,7 @@ const Contacts = () => {
             <Input placeholder='name' value={values.name} name='name' onChange={(e) => { setvalues(e.target.value) }} required></Input>
             <Input placeholder='email' name='email' value={values.email} onChange={(e) => { setvalues(e.target.value) }} required></Input>
             <TextArea placeholder='Write your message' name='message' value={values.message} onChange={(e) => { setvalues(e.target.value) }}
-              rows={10} required></TextArea>
+               required></TextArea>
             <Button type='submit' value="Send">Send</Button>
             {error && <p>`Your response is submitted thank you for your valueable time.`</p>}
           </Form>
