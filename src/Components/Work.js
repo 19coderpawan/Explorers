@@ -5,7 +5,7 @@ import Development from './Development'
 import Product from './Product'
 
 const WorkSection = styled.div`
-height:100vh;
+height:150vh;
 scroll-snap-align:center;
 display:flex;
 justify-content:center;
@@ -20,15 +20,17 @@ const WorkContainer = styled.div`
   height: auto;
   display:flex;
   justify-content:space-between;
+  gap:80px;
   @media only screen and (max-width:786px){
     flex-direction: column;
     justify-content: center;
     width:100%;
     align-items: center;
+    
   }
 `
 const WorkLeft = styled.div`
-  flex:2;
+  flex:3;
   display:flex;
   align-items:center;
   @media only screen and (max-width:786px){
@@ -42,7 +44,7 @@ flex-direction: column;
 gap:20px;
 `
 const Listitems = styled.li`
-  font-size:90px;
+  font-size:80px;
   color:transparent;
   font-weight:bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -80,7 +82,7 @@ const Listitems = styled.li`
   }
 `;
 const WorkRight = styled.div`
-  flex:1;
+  flex:2;
   @media only screen and (max-width:786px){
     height: 100%; 
     width:100%;
